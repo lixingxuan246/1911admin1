@@ -28,41 +28,25 @@
     <tr>
         <th>管理员id</th>
         <th>管理员名称</th>
-        <th>管理员头像</th>
+
+        <th>管理员email</th>
+        <th>管理员手机号</th>
+        <th>创建时间</th>
         <th>操作</th>
     </tr>
     </thead>
     <tbody>
+  @foreach ($res as $k =>$v)
     <tr>
-        <td>1</td>
-        <td>aaa</td>
-        <td>1989-10-14</td>
-        <td>人生似修行</td>
-    </tr>
-    <tr>
-        <td>2</td>
-        <td>ccc</td>
-        <td>1920-09-30</td>
+        <td>{{$v->admin_id}}</td>
+        <td>{{$v->admin_name}}</td>
+        <td>{{$v->admin_email}}</td>
+        <td>{{$v->admin_phone}}</td>
+        <td>{{date('Y-m-d',$v->ctime)}}</td>
         <td></td>
     </tr>
-    <tr>
-        <td>3</td>
-        <td>cddd</td>
-        <td>1880-06-27</td>
-        <td></td>
-    </tr>
-    <tr>
-        <td>4</td>
-        <td>www</td>
-        <td>1103-北宋崇宁二年</td>
-        <td></td>
-    </tr>
-    <tr>
-        <td>5</td>
-        <td>qqqqq</td>
-        <td>公元前-372年</td>
-        <td></td>
-    </tr>
+      @endforeach
+
     </tbody>
 </table>
 
