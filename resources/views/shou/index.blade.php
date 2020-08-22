@@ -62,6 +62,10 @@
                     <dl class="layui-nav-child">
                         <dd><a href="{{url('/role/add')}}">角色添加</a></dd>
                         <dd><a href="{{url('/role/index')}}">角色列表</a></dd>
+
+                        <dd><a href="{{url('/admin/tianjia')}}">管理员登录</a></dd>
+                        <dd><a href="{{url('/admin/zhan')}}">管理员列表</a></dd>
+                        <dd><a href="{{url('/admin/admin/create')}}">管理员添加</a></dd>
                     </dl>
                 </li>
             </ul>
@@ -71,19 +75,4 @@
     <div class="layui-body">
         @yield('content')
 
-        <!-- 容主体区域 -->
-        <div style="padding: 15px;"></div>
-    </div>
-
-
-</div>
-<script src="/layui/layui.js"></script>
-<script>
-    //JavaScript代码区域
-    layui.use('element', function(){
-        var element = layui.element;
-
-    });
-</script>
-</body>
-</html>
+        <!-- 容主体区域 --
