@@ -4,14 +4,14 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class PowerNodeModel extends Model
+class RbacAdminModel extends Model
 {
     //
+    public $table ='rbac_admin';
 
-    public $table = 'rbac_power_node';
-
+    public $primaryKey = 'admin_id';
     public $timestamps = false;
 
-    public $primaryKey = 'power_node_id';
+
 
 }
