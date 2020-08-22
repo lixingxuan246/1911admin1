@@ -13,4 +13,5 @@ class PowerNodeModel extends Model
     public $timestamps = false;
 
     public $primaryKey = 'power_node_id';
+
 }

@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <title>layout 后台大布局 - Layui</title>
+    <title>RBAC后台</title>
     <link rel="stylesheet" href="/layui/css/layui.css">
 </head>
 <body class="layui-layout-body">
@@ -28,8 +28,8 @@
         <ul class="layui-nav layui-layout-right">
             <li class="layui-nav-item">
                 <a href="javascript:;">
-                    <img src="http://t.cn/RCzsdCq" class="layui-nav-img">
-                    贤心
+{{--                    <img src="http://t.cn/RCzsdCq" class="layui-nav-img">--}}
+{{--                    贤心--}}
                 </a>
                 <dl class="layui-nav-child">
                     <dd><a href="">基本资料</a></dd>
@@ -68,6 +68,13 @@
                         <dd><a href="{{url('/admin/admin/create')}}">管理员添加</a></dd>
                     </dl>
                 </li>
+                <li class="layui-nav-item layui-nav-itemed">
+                    <a class="" href="javascript:;">权限节点管理</a>
+                    <dl class="layui-nav-child">
+                        <dd><a href="{{url('/admin/powerNodeAdd')}}">权限节点添加</a></dd>
+                        <dd><a href="{{url('/admin/powerNodeList')}}">权限节点列表</a></dd>
+                    </dl>
+                </li>
             </ul>
         </div>
     </div>
@@ -75,4 +82,19 @@
     <div class="layui-body">
         @yield('content')
 
-        <!-- 容主体区域 --
+        <!-- 容主体区域 -->
+        <div style="padding: 15px;"></div>
+    </div>
+
+
+</div>
+<script src="/layui/layui.js"></script>
+<script>
+    //JavaScript代码区域
+    layui.use('element', function(){
+        var element = layui.element;
+
+    });
+</script>
+</body>
+</html>
