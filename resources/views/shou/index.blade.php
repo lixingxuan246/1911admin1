@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <title>RBAC后台</title>
+    <script src="/layui/layui.js"></script>
     <link rel="stylesheet" href="/layui/css/layui.css">
 </head>
 <body class="layui-layout-body">
@@ -88,7 +89,6 @@
 
 
 </div>
-<script src="/layui/layui.js"></script>
 <script>
     //JavaScript代码区域
     layui.use('element', function(){
