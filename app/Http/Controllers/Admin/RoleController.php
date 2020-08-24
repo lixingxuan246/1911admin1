@@ -2,28 +2,62 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Http\Controllers\CommonController;
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use DB;
 use App\Models\PowerNodeModel;
 use App\Models\RoleModel;
 use App\Models\RolePowerNodeModel;
-class RoleController extends CommonController
+class RoleController extends  Controller
+
 {
-    //角色添加
-    public function add( Request $request){
-        return view('role.add');
+    private function getAllPowerNode( )
+    {
+        $power_node_model = new PowerNodeModel();
+
+        $where = [
+            [ 'status' , '=' , 1 ]
+        ];
+        $obj = $power_node_model -> where( $where ) -> get();
+
+        $power_node_list = collect( $obj ) -> toArray();
+
+        $all_node = [];
+        foreach( $power_node_list as $k => $v ){
+            if( $v['power_node_pid'] == 0 ){
+                $all_node[$v['power_node_id']] = $v;
+            }else{
+                $all_node[$v['power_node_pid']]['son'][] = $v;
+            }
+        }
+        return $all_node;
     }
+    //角色添加
+    public function add( Request $request)
+    {
+//        var_dump(111);exit;
+        $power_node = $this ->getAllPowerNode();
+        return view('role.add',[
+            'all_node' => $power_node
+        ]);
+    }
+
     public function store(Request $request){
         $data=$request->except('_token');
+
         $data['ctime'] = time();
-        $res = DB::table('rbac_role')->insert($data);
+//
+       // $res = DB::table('rbac_role')->insert($data);
+        $model = new RoleModel();
+        $res = $model -> save($data);
+//        dd($res);exit;
         if($res){
             return redirect('/role/index');
         }
     }
     public function index( ){
-        $res = DB::table('rbac_role')->select('*')->get();
+        $res=RoleModel::leftjoin('rbac_power_node','rbac_role.power_node_id','=','rbac_power_node.power_node_id')
+            ->paginate(3);
         return view('role.index',['res'=>$res]);
     }
     public function detal( $role_id ){

@@ -3,6 +3,13 @@
 
         <!DOCTYPE html>
 <html>
+<style>
+    ul li {
+        list-style: none;
+        float: left;
+        margin-left: 12px;
+    }
+</style>
 <body>
     <h1>用户展示</h1><hr>
     <table class="layui-table" lay-even="" lay-skin="row">
@@ -37,7 +44,7 @@
         @endforeach
         </tbody>
     </table>
-
+    {{$res->links()}}
     <script src="/layui/layui.js" charset="utf-8"></script>
 </body>
 </html>
