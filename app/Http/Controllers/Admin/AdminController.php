@@ -32,35 +32,7 @@ class AdminController extends CommonController
      * 管理员添加
      * */
     public function create(){
-//    $model = new PowerNodeModel();
-//        $role_list = $model ->get();
-//        $role_where = [
-//            [
-//                'r.status' , '=' , 1
-//            ]
-//        ];
-//        $role_list = DB::table('rbac_role as r')
-//            -> where( $role_where )
-//            -> join( 'rbac_role_power_relation as rpnr', 'r.role_id' , '=' , 'rpnr.role_id' )
-//            -> join( 'rbac_power_node as rpn', 'rpnr.power_node_id' , '=' , 'rpn.power_node_id' )
-//            -> get()
-//            -> toArray();
-//        $role_list = json_decode(json_encode( $role_list ) , true  );
-//
-//        $role_new = [];
-//
-//        foreach( $role_list as $k => $v ){
-//            if( $v['power_node_level'] == 1 )
-//            {
-//                if( !isset($role_new[$v['role_id']])){
-//                    $role_new[$v['role_id']] = $v;
-//                }else{
-//                    $role_new[$v['role_id']]['power_list'][] = $v;
-//                }
-//            }else{
-//                $role_new[$v['role_id']]['power_list'][] = $v;
-//            }
-//        }
+
         return view('category/create');
     }
 
