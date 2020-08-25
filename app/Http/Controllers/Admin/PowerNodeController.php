@@ -78,6 +78,9 @@ class PowerNodeController extends Controller
             return redirect('/admin/powerNodeList');
         }
     }
-
+    public function auth($power_node_id){
+        $data=PowerNodeModel::where('power_node_id',$power_node_id)->first();
+        return view('powernode.auth',['data'=>$data]);
+    }
 
 }

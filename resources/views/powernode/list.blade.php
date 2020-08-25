@@ -27,7 +27,7 @@
             <td>{{$v->power_node_url}}</td>
             <td>{{$v->status==1?'√':'×'}}</td>
             <td>{{date('Y-m-d H:i:s',$v->ctime)}}</td>
-            <td><a href="" class="btn btn-success">编辑</a>
+            <td>{{--}}<a href="{{url('/powernode/auth/'.$v->power_node_id)}}" class="btn btn-success">编辑</a>--}}
                 <a href="{{url('/powernode/destroy/'.$v->power_node_id)}}" class="btn btn-info">删除</a>
             </td>
         </tr>

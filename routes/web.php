@@ -26,3 +26,5 @@ Route::any('/admin/powerNodeAdd' , 'Admin\PowerNodeController@powerNodeAdd' );
 Route::any('/admin/powerNodeList' , 'Admin\PowerNodeController@powerNodeList' );
 #权限删除
 Route::any('/powernode/destroy/{power_node_id}' , 'Admin\PowerNodeController@destroy' );
+#权限修改
+Route::any('/powernode/auth/{power_node_id}' , 'Admin\PowerNodeController@auth' );
