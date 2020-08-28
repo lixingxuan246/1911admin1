@@ -69,9 +69,12 @@ class RoleController extends  Controller
     }
     public function edit($role_id)
     {
+
         $res= DB::table('rbac_role')->where('role_id',$role_id)->first();
         // dd($res);
-        return view('role.edit',['res'=>$res]);
+        $power_node = $this ->getAllPowerNode();
+
+        return view('role.edit',['res'=>$res,'all_node' => $power_node]);
     }
     public function update(Request $request, $role_id)
     {

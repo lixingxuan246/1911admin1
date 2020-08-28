@@ -18,8 +18,8 @@ class UsersTableSeeder extends Seeder
         $model = new App\Models\NewsUserModel();
         $model ->nick_name = 'nick_'.$rand;
         $model ->user_name = 'user_'.$rand;
-        $model ->phone = '126826'.$rand;
-        $model ->email = '15945896235@qq.com';
+        $model ->phone = '1268265'.$rand;
+        $model ->email = '1594589'.$rand.'@qq.com';
         $model ->password = md5('123456'.$rand);
         $model ->rand_code = $rand;
         $model ->reg_type = rand(1 ,2);
